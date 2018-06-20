@@ -11,6 +11,12 @@ namespace PrsMvc {
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
 			routes.MapRoute(
+				name: "PRID",
+				url: "{controller}/{action}/{id}/{prid}",
+				defaults: new { controller = "Home", action = "Index", prid = UrlParameter.Optional, id = UrlParameter.Optional }
+			);
+
+			routes.MapRoute(
 				name: "Default",
 				url: "{controller}/{action}/{id}",
 				defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
